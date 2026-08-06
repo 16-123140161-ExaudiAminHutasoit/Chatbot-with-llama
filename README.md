@@ -1,4 +1,4 @@
-# 🏛️ SYSTEM CHATBOT STATISTIK RESMI BPS KABUPATEN LAMPUNG SELATAN
+# SYSTEM CHATBOT STATISTIK RESMI BPS KABUPATEN LAMPUNG SELATAN
 
 Sistem Layanan Informasi dan Pelayanan Statistik Terpadu (PST) berbasis AI dan WhatsApp Gateway resmi untuk BPS Kabupaten Lampung Selatan.
 
