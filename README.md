@@ -49,9 +49,3 @@ C:\Chatbot\
 4. Jika diminta, scan **QR Code** yang muncul di layar menggunakan aplikasi WhatsApp HP Kantor (*Perangkat Tertaut*).
 
 ---
-
-##  Kontak & Informasi Pengembang
-
-- **Instansi**: BPS Kabupaten Lampung Selatan
-- **Alamat**: Jl. Mustafa Kemal No. 24, Kalianda, Lampung Selatan 35513
-- **Website**: https://lampungselatankab.bps.go.id
