@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 90" width="480" height="90">
+  <defs>
+    <linearGradient id="blueRing" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00A3E0" />
+      <stop offset="100%" stop-color="#005B94" />
+    </linearGradient>
+  </defs>
+
+  <!-- BPS Logo Mark -->
+  <g transform="translate(10, 10)">
+    <!-- Swoosh Ellipse Ring -->
+    <ellipse cx="45" cy="35" rx="38" ry="24" fill="none" stroke="url(#blueRing)" stroke-width="4" transform="rotate(-20 45 35)" />
+
+    <!-- Top Left Block (Blue) -->
+    <path d="M 28 20 L 45 20 L 38 38 L 21 38 Z" fill="#0082C8" />
+    <!-- Top Right Block (Orange) -->
+    <path d="M 47 20 L 64 20 L 57 38 L 40 38 Z" fill="#F37023" />
+    <!-- Bottom Block (Green) -->
+    <path d="M 21 40 L 48 40 L 41 58 L 14 58 Z" fill="#6CC24A" />
+  </g>
+
+  <!-- BPS Text Title (Bold, Italic, White, Uppercase) -->
+  <text x="80" y="38" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-weight="900" font-style="italic" font-size="22" fill="#FFFFFF" letter-spacing="1">BADAN PUSAT STATISTIK</text>
+  <text x="80" y="66" font-family="'Segoe UI', Roboto, Arial, sans-serif" font-weight="900" font-style="italic" font-size="22" fill="#FFFFFF" letter-spacing="1">KABUPATEN LAMPUNG SELATAN</text>
+</svg>
