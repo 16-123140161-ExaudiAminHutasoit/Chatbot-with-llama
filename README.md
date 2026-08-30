@@ -1,10 +1,10 @@
-# 🤖 WhatsApp AI Chatbot — LlamaIndex + Ollama + Baileys
+#  WhatsApp AI Chatbot — LlamaIndex + Ollama + Baileys
 
 Chatbot berbasis WhatsApp dengan kemampuan AI lokal (offline), diagram statistik otomatis, dan sistem menu interaktif. Dibangun menggunakan **Node.js (Baileys)**, **Python (FastAPI + LlamaIndex)**, dan **Ollama** sebagai model AI lokal.
 
 ---
 
-## 📦 Tech Stack
+##  Tech Stack
 
 | Komponen | Teknologi |
 |----------|-----------|
@@ -16,7 +16,7 @@ Chatbot berbasis WhatsApp dengan kemampuan AI lokal (offline), diagram statistik
 
 ---
 
-## 📁 Struktur Direktori
+##  Struktur Direktori
 
 ```text
 Chatbot/
@@ -29,7 +29,7 @@ Chatbot/
 ├── llamaindex-docs-agent/
 │   └── backend/
 │       ├── main.py                   # Server FastAPI (Port 8001)
-│       ├── data/                     # ⚠️ FOLDER INI KOSONG DI GITHUB
+│       ├── data/                     #  FOLDER INI KOSONG DI GITHUB
 │       │   ├── sensus/               # Letakkan file .md data utama di sini
 │       │   └── docs/                 # Letakkan file .md dokumen pendukung di sini
 │       ├── storage/                  # Di-generate otomatis saat pertama jalan
@@ -45,7 +45,7 @@ Chatbot/
 
 ---
 
-## ⚙️ Instalasi & Setup Awal
+##  Instalasi & Setup Awal
 
 ### Prasyarat
 Pastikan software berikut sudah ter-install:
@@ -100,9 +100,9 @@ Tunggu hingga selesai, lalu ketik `/exit` untuk keluar.
 
 ---
 
-## 📂 Cara Memasukkan Data ke Database AI
+##  Cara Memasukkan Data ke Database AI
 
-> ⚠️ **Folder `data/sensus/` dan `data/docs/` sengaja dikosongkan** di repository ini.
+>  **Folder `data/sensus/` dan `data/docs/` sengaja dikosongkan** di repository ini.
 > Anda perlu mengisi sendiri dengan data Anda sebelum menjalankan chatbot.
 
 ### Format Data yang Didukung
@@ -160,11 +160,11 @@ Total PDRB Atas Dasar Harga Berlaku tahun 2024: Rp 57.234,50 Miliar.
    mengindeks semua file .md yang baru ditambahkan
 ```
 
-> 💡 **Tips:** Semakin detail dan terstruktur isi file `.md`, semakin akurat jawaban AI.
+> **Tips:** Semakin detail dan terstruktur isi file `.md`, semakin akurat jawaban AI.
 
 ---
 
-## 🚀 Menjalankan Chatbot
+## Menjalankan Chatbot
 
 **Cara mudah (Windows):**
 1. Buka folder proyek
@@ -185,7 +185,7 @@ node index.js
 
 ---
 
-## 🔄 Perintah & Tips Berguna
+##  Perintah & Tips Berguna
 
 | Aksi | Cara |
 |------|------|
@@ -197,7 +197,7 @@ node index.js
 
 ---
 
-## 🔒 Keamanan & Data Privat
+##  Keamanan & Data Privat
 
 File berikut **tidak ter-upload ke GitHub** (dilindungi `.gitignore`):
 
@@ -211,6 +211,6 @@ File berikut **tidak ter-upload ke GitHub** (dilindungi `.gitignore`):
 
 ---
 
-## 📄 Lisensi
+##  Lisensi
 
 MIT License — bebas digunakan dan dimodifikasi.
