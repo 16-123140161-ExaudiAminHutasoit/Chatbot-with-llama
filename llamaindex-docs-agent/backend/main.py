@@ -5,6 +5,7 @@ import uvicorn
 from contextlib import asynccontextmanager
 
 from app.api.routers.chat import chat_router
+from app.api.routers.chart import chart_router
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
@@ -54,7 +55,8 @@ if environment == "dev":
         allow_headers=["*"],
     )
 
-app.include_router(chat_router, prefix="/api/chat")
+app.include_router(chat_router,  prefix="/api/chat")
+app.include_router(chart_router, prefix="/api/chart")
 
 
 if __name__ == "__main__":

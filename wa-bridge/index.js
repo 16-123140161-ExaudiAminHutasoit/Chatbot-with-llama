@@ -318,44 +318,44 @@ const DATA_MENU = {
         years: ["2024", "2023", "2022", "2021", "2020", "2019", "2018", "2017"],
         queryAll:  "Tampilkan seluruh data jumlah penduduk Kabupaten Lampung Selatan dari semua tahun yang tersedia secara lengkap",
         queryYear: "Berapa jumlah penduduk Kabupaten Lampung Selatan tahun {YEAR}? Tampilkan data lengkap termasuk per kecamatan jika tersedia.",
-        chartPath: "./charts/chart_penduduk.png",
+        chartName: "chart_penduduk",
       },
       2: {
         label: "Kepadatan Penduduk",
         years: null,
         directQuery: "Tampilkan data kepadatan penduduk per kecamatan di Kabupaten Lampung Selatan secara lengkap",
-        chartPath: "./charts/chart_kepadatan_penduduk.png",
+        chartName: "chart_kepadatan_penduduk",
       },
       3: {
         label: "Laju Pertumbuhan Penduduk",
         years: ["2024", "2023", "2022", "2021", "2020", "2019", "2018"],
         queryAll:  "Tampilkan seluruh data laju pertumbuhan penduduk Kabupaten Lampung Selatan dari semua tahun yang tersedia",
         queryYear: "Berapa laju pertumbuhan penduduk Kabupaten Lampung Selatan tahun {YEAR}?",
-        chartPath: "./charts/chart_laju_penduduk.png",
+        chartName: "chart_laju_penduduk",
       },
       4: {
         label: "Persentase Penduduk per Kecamatan",
         years: null,
         directQuery: "Tampilkan data persentase penduduk per kecamatan di Kabupaten Lampung Selatan secara lengkap",
-        chartPath: "./charts/chart_persentase_penduduk.png",
+        chartName: "chart_persentase_penduduk",
       },
       5: {
         label: "Piramida Penduduk (Kelompok Umur)",
         years: null,
         directQuery: "Tampilkan data piramida penduduk berdasarkan kelompok umur di Kabupaten Lampung Selatan",
-        chartPath: "./charts/chart_piramida_penduduk.png",
+        chartName: "chart_piramida_penduduk",
       },
       6: {
         label: "Proyeksi Penduduk",
         years: null,
         directQuery: "Tampilkan data proyeksi penduduk per kecamatan di Kabupaten Lampung Selatan secara lengkap",
-        chartPath: "./charts/chart_proyeksi_penduduk.png",
+        chartName: "chart_proyeksi_penduduk",
       },
       7: {
         label: "Rasio Jenis Kelamin",
         years: null,
         directQuery: "Tampilkan data rasio jenis kelamin penduduk per kecamatan di Kabupaten Lampung Selatan",
-        chartPath: "./charts/chart_sex_ratio.png",
+        chartName: "chart_sex_ratio",
       },
     },
   },
@@ -368,45 +368,45 @@ const DATA_MENU = {
         label: "Angka Partisipasi Kasar (APK)",
         years: null,
         directQuery: "Tampilkan rincian data Angka Partisipasi Kasar APK Menurut Jenjang Pendidikan BPS Kabupaten Lampung Selatan dari semua tahun",
-        chartPath: "./charts/chart_apk.png",
+        chartName: "chart_apk",
       },
       2: {
         label: "Angka Partisipasi Murni (APM)",
         years: null,
         directQuery: "Tampilkan rincian data Angka Partisipasi Murni APM Menurut Jenjang Pendidikan BPS Kabupaten Lampung Selatan dari semua tahun",
-        chartPath: "./charts/chart_apm.png",
+        chartName: "chart_apm",
       },
       3: {
         label: "Indeks Pembangunan Manusia (IPM)",
         years: ["2024", "2023", "2022", "2021", "2020", "2019", "2018", "2015", "2010"],
         queryAll:  "Tampilkan seluruh data Indeks Pembangunan Manusia IPM Kabupaten Lampung Selatan dari semua tahun yang tersedia",
         queryYear: "Berapa Indeks Pembangunan Manusia IPM Kabupaten Lampung Selatan tahun {YEAR}? Tampilkan komponen IPM jika tersedia.",
-        chartPath: "./charts/chart_ipm.png",
+        chartName: "chart_ipm",
       },
       4: {
         label: "Indikator Kemiskinan",
         years: ["2025", "2024", "2023", "2022", "2021", "2020", "2015", "2010", "2005"],
         queryAll:  "Tampilkan seluruh data indikator kemiskinan Kabupaten Lampung Selatan dari semua tahun: jumlah penduduk miskin (ribu jiwa), persentase penduduk miskin (%), garis kemiskinan (rupiah), P1, dan P2",
         queryYear: "Tampilkan data indikator kemiskinan Kabupaten Lampung Selatan tahun {YEAR}: jumlah penduduk miskin dalam ribu jiwa, persentase penduduk miskin dalam persen, garis kemiskinan dalam rupiah per kapita per bulan, indeks kedalaman kemiskinan P1, dan indeks keparahan kemiskinan P2",
-        chartPath: "./charts/chart_kemiskinan.png",
+        chartName: "chart_kemiskinan",
       },
       5: {
         label: "Tingkat Partisipasi Angkatan Kerja (TPAK)",
         years: null,
         directQuery: "Tampilkan data Tingkat Partisipasi Angkatan Kerja TPAK Kabupaten Lampung Selatan dari semua tahun yang tersedia",
-        chartPath: "./charts/chart_ketenagakerjaan.png",
+        chartName: "chart_ketenagakerjaan",
       },
       6: {
         label: "Tingkat Pengangguran Terbuka (TPT)",
         years: null,
         directQuery: "Tampilkan data Tingkat Pengangguran Terbuka TPT Kabupaten Lampung Selatan dari semua tahun yang tersedia",
-        chartPath: "./charts/chart_ketenagakerjaan.png",
+        chartName: "chart_ketenagakerjaan",
       },
       7: {
         label: "Gini Ratio (Rasio Gini)",
         years: null,
         directQuery: "Tampilkan rincian data Gini Ratio Rasio Gini Ketimpangan Pendapatan BPS Kabupaten Lampung Selatan dari semua tahun",
-        chartPath: "./charts/chart_gini_ratio.png",
+        chartName: "chart_gini_ratio",
       },
     },
   },
@@ -420,49 +420,49 @@ const DATA_MENU = {
         years: ["2024", "2023", "2020", "2015", "2010"],
         queryAll:  "Tampilkan seluruh data PDRB lapangan usaha atas dasar harga berlaku ADHB Kabupaten Lampung Selatan dari semua tahun (2010 s.d. 2024)",
         queryYear: "Berapa nilai PDRB lapangan usaha atas dasar harga berlaku ADHB Kabupaten Lampung Selatan pada tahun {YEAR}? Tampilkan rincian sektor.",
-        chartPath: "./charts/chart_pdrb_adhb.png",
+        chartName: "chart_pdrb_adhb",
       },
       2: {
         label: "PDRB Lapangan Usaha - ADHK",
         years: ["2024", "2023", "2020", "2015", "2010"],
         queryAll:  "Tampilkan seluruh data PDRB lapangan usaha atas dasar harga konstan ADHK Kabupaten Lampung Selatan dari semua tahun (2010 s.d. 2024)",
         queryYear: "Berapa nilai PDRB lapangan usaha atas dasar harga konstan ADHK Kabupaten Lampung Selatan pada tahun {YEAR}? Tampilkan rincian sektor.",
-        chartPath: "./charts/chart_pdrb_adhk.png",
+        chartName: "chart_pdrb_adhk",
       },
       3: {
         label: "PDRB Pengeluaran - ADHB",
         years: ["2024", "2023", "2020", "2015", "2010"],
         queryAll:  "Tampilkan seluruh data PDRB pengeluaran atas dasar harga berlaku ADHB Kabupaten Lampung Selatan dari semua tahun (2010 s.d. 2024)",
         queryYear: "Berapa total nilai PDRB pengeluaran atas dasar harga berlaku ADHB Kabupaten Lampung Selatan pada tahun {YEAR} dalam Milyar Rupiah?",
-        chartPath: "./charts/chart_pdrb_pengeluaran.png",
+        chartName: "chart_pdrb_pengeluaran",
       },
       4: {
         label: "PDRB Pengeluaran - ADHK",
         years: ["2024", "2023", "2020", "2015", "2010"],
         queryAll:  "Tampilkan seluruh data PDRB pengeluaran atas dasar harga konstan ADHK Kabupaten Lampung Selatan dari semua tahun (2010 s.d. 2024)",
         queryYear: "Berapa total nilai PDRB pengeluaran atas dasar harga konstan ADHK Kabupaten Lampung Selatan pada tahun {YEAR} dalam Milyar Rupiah?",
-        chartPath: "./charts/chart_pdrb_pengeluaran.png",
+        chartName: "chart_pdrb_pengeluaran",
       },
       5: {
         label: "Laju Pertumbuhan PDRB",
         years: ["2024", "2023", "2022", "2021", "2020", "2019", "2018", "2017", "2016", "2015", "2014", "2013", "2012", "2011"],
         queryAll:  "Tampilkan seluruh data ringkasan laju pertumbuhan ekonomi PDRB Kabupaten Lampung Selatan dari semua tahun (2011 hingga 2024) secara lengkap dalam persen %",
         queryYear: "Berapa laju pertumbuhan ekonomi PDRB Kabupaten Lampung Selatan pada tahun {YEAR} (dalam persen %)? Tampilkan angka persen pertumbuhan ekonomi secara lengkap.",
-        chartPath: "./charts/chart_laju_ekonomi.png",
+        chartName: "chart_laju_ekonomi",
       },
       6: {
         label: "Distribusi PDRB",
         years: ["2024", "2023", "2020", "2015", "2010"],
         queryAll:  "Tampilkan data distribusi PDRB Kabupaten Lampung Selatan menurut lapangan usaha dan pengeluaran dari semua tahun",
         queryYear: "Tampilkan distribusi PDRB Kabupaten Lampung Selatan menurut lapangan usaha dan pengeluaran pada tahun {YEAR} secara lengkap",
-        chartPath: "./charts/chart_pdrb_adhb.png",
+        chartName: "chart_pdrb_adhb",
       },
       7: {
         label: "Gini Ratio",
         years: ["2024", "2023", "2022", "2021", "2020", "2019"],
         queryAll:  "Tampilkan seluruh data Gini Ratio Kabupaten Lampung Selatan dari semua tahun yang tersedia",
         queryYear: "Berapa Gini Ratio Kabupaten Lampung Selatan pada tahun {YEAR}?",
-        chartPath: "./charts/chart_gini_ratio.png",
+        chartName: "chart_gini_ratio",
       },
     },
   },
@@ -701,47 +701,53 @@ async function processMessage(jid, text) {
   const isDiagramRequest = /diagram|grafik|chart|gambar|grafis|visual/i.test(cleanLower);
   if (isDiagramRequest) {
     const CHART_KEYWORDS = [
-      { keys: ["kemiskinan","miskin"],                       chartPath: "./charts/chart_kemiskinan.png",           label: "Indikator Kemiskinan" },
-      { keys: ["ipm","pembangunan manusia"],                 chartPath: "./charts/chart_ipm.png",                  label: "Indeks Pembangunan Manusia (IPM)" },
-      { keys: ["apk","partisipasi kasar"],                   chartPath: "./charts/chart_apk.png",                  label: "Angka Partisipasi Kasar (APK)" },
-      { keys: ["apm","partisipasi murni"],                   chartPath: "./charts/chart_apm.png",                  label: "Angka Partisipasi Murni (APM)" },
-      { keys: ["gini","ketimpangan","rasio gini"],           chartPath: "./charts/chart_gini_ratio.png",           label: "Gini Ratio" },
-      { keys: ["ketenagakerjaan","tpak","tpt","angkatan kerja","pengangguran"], chartPath: "./charts/chart_ketenagakerjaan.png", label: "Ketenagakerjaan" },
-      { keys: ["laju ekonomi","pertumbuhan ekonomi","laju pdrb","pertumbuhan pdrb"], chartPath: "./charts/chart_laju_ekonomi.png", label: "Laju Pertumbuhan PDRB" },
-      { keys: ["pdrb adhb","harga berlaku"],                 chartPath: "./charts/chart_pdrb_adhb.png",            label: "PDRB ADHB" },
-      { keys: ["pdrb adhk","harga konstan"],                 chartPath: "./charts/chart_pdrb_adhk.png",            label: "PDRB ADHK" },
-      { keys: ["pdrb pengeluaran","pengeluaran"],            chartPath: "./charts/chart_pdrb_pengeluaran.png",     label: "PDRB Pengeluaran" },
-      { keys: ["pdrb"],                                      chartPath: "./charts/chart_pdrb_adhb.png",            label: "PDRB" },
-      { keys: ["piramida","kelompok umur"],                  chartPath: "./charts/chart_piramida_penduduk.png",    label: "Piramida Penduduk" },
-      { keys: ["proyeksi penduduk"],                         chartPath: "./charts/chart_proyeksi_penduduk.png",    label: "Proyeksi Penduduk" },
-      { keys: ["kepadatan"],                                 chartPath: "./charts/chart_kepadatan_penduduk.png",   label: "Kepadatan Penduduk" },
-      { keys: ["sex ratio","rasio jenis kelamin"],           chartPath: "./charts/chart_sex_ratio.png",            label: "Rasio Jenis Kelamin" },
-      { keys: ["persentase penduduk"],                       chartPath: "./charts/chart_persentase_penduduk.png",  label: "Persentase Penduduk per Kecamatan" },
-      { keys: ["laju penduduk","pertumbuhan penduduk"],      chartPath: "./charts/chart_laju_penduduk.png",        label: "Laju Pertumbuhan Penduduk" },
-      { keys: ["penduduk","jumlah penduduk","demografi"],    chartPath: "./charts/chart_penduduk.png",             label: "Jumlah Penduduk" },
+      { keys: ["kemiskinan","miskin"],                       chartName: "chart_kemiskinan",           label: "Indikator Kemiskinan" },
+      { keys: ["ipm","pembangunan manusia"],                 chartName: "chart_ipm",                  label: "Indeks Pembangunan Manusia (IPM)" },
+      { keys: ["apk","partisipasi kasar"],                   chartName: "chart_apk",                  label: "Angka Partisipasi Kasar (APK)" },
+      { keys: ["apm","partisipasi murni"],                   chartName: "chart_apm",                  label: "Angka Partisipasi Murni (APM)" },
+      { keys: ["gini","ketimpangan","rasio gini"],           chartName: "chart_gini_ratio",           label: "Gini Ratio" },
+      { keys: ["ketenagakerjaan","tpak","tpt","angkatan kerja","pengangguran"], chartName: "chart_ketenagakerjaan", label: "Ketenagakerjaan" },
+      { keys: ["laju ekonomi","pertumbuhan ekonomi","laju pdrb","pertumbuhan pdrb"], chartName: "chart_laju_ekonomi", label: "Laju Pertumbuhan PDRB" },
+      { keys: ["pdrb adhb","harga berlaku"],                 chartName: "chart_pdrb_adhb",            label: "PDRB ADHB" },
+      { keys: ["pdrb adhk","harga konstan"],                 chartName: "chart_pdrb_adhk",            label: "PDRB ADHK" },
+      { keys: ["pdrb pengeluaran","pengeluaran"],            chartName: "chart_pdrb_pengeluaran",     label: "PDRB Pengeluaran" },
+      { keys: ["pdrb"],                                      chartName: "chart_pdrb_adhb",            label: "PDRB" },
+      { keys: ["piramida","kelompok umur"],                  chartName: "chart_piramida_penduduk",    label: "Piramida Penduduk" },
+      { keys: ["proyeksi penduduk"],                         chartName: "chart_proyeksi_penduduk",    label: "Proyeksi Penduduk" },
+      { keys: ["kepadatan"],                                 chartName: "chart_kepadatan_penduduk",   label: "Kepadatan Penduduk" },
+      { keys: ["sex ratio","rasio jenis kelamin"],           chartName: "chart_sex_ratio",            label: "Rasio Jenis Kelamin" },
+      { keys: ["persentase penduduk"],                       chartName: "chart_persentase_penduduk",  label: "Persentase Penduduk per Kecamatan" },
+      { keys: ["laju penduduk","pertumbuhan penduduk"],      chartName: "chart_laju_penduduk",        label: "Laju Pertumbuhan Penduduk" },
+      { keys: ["penduduk","jumlah penduduk","demografi"],    chartName: "chart_penduduk",             label: "Jumlah Penduduk" },
     ];
+
+    let requestedStyle = "bar";
+    if (/garis|line|tren|trend|kurva|lain|variasi|opsi|beda/i.test(cleanLower)) {
+      requestedStyle = "line";
+    } else if (/pie|lingkaran|donat|donut|persen|distribusi/i.test(cleanLower)) {
+      requestedStyle = "pie";
+    }
 
     for (const entry of CHART_KEYWORDS) {
       if (entry.keys.some((k) => cleanLower.includes(k))) {
-        if (fs.existsSync(entry.chartPath)) {
-          console.log(`[CHART-KEYWORD] Mengirim diagram '${entry.label}' via kata kunci.`);
-          return {
-            text: [
-              `-- DIAGRAM ${entry.label.toUpperCase()} --`,
-              "",
-              `Berikut adalah diagram grafik data statistik resmi BPS Kabupaten Lampung Selatan untuk indikator ${entry.label}.`,
-              "",
-              "Untuk data lengkap dengan rincian angka, silakan pilih dari menu:",
-              "Ketik 2 (Kependudukan), 3 (Sosial/Pendidikan), atau 4 (Ekonomi/PDRB)",
-              "",
-              "Tautan Referensi Resmi BPS Lamsel:",
-              "https://lampungselatankab.bps.go.id",
-              "",
-              "Ketik 0 untuk kembali ke Menu Utama.",
-            ].join("\n"),
-            chartPath: entry.chartPath,
-          };
-        }
+        console.log(`[CHART-KEYWORD] Request diagram '${entry.label}' style='${requestedStyle}' via kata kunci.`);
+        return {
+          text: [
+            `-- DIAGRAM ${entry.label.toUpperCase()} (${requestedStyle.toUpperCase()}) --`,
+            "",
+            `Berikut adalah diagram grafik data statistik resmi BPS Kabupaten Lampung Selatan untuk indikator ${entry.label}.`,
+            "",
+            "Untuk data lengkap dengan rincian angka, silakan pilih dari menu:",
+            "Ketik 2 (Kependudukan), 3 (Sosial/Pendidikan), atau 4 (Ekonomi/PDRB)",
+            "",
+            "Tautan Referensi Resmi BPS Lamsel:",
+            "https://lampungselatankab.bps.go.id",
+            "",
+            "Ketik 0 untuk kembali ke Menu Utama.",
+          ].join("\n"),
+          chartName: entry.chartName,
+          chartStyle: requestedStyle,
+        };
       }
     }
 
@@ -852,7 +858,7 @@ async function processMessage(jid, text) {
           "Ketik 0 untuk kembali ke Menu Utama."
         ].join("\n");
 
-        return item.chartPath ? { text: simpleText, chartPath: item.chartPath } : simpleText;
+        return item.chartName ? { text: simpleText, chartName: item.chartName } : simpleText;
       }
 
       // Jika angka murni tetapi di luar range pilihan sub-menu
@@ -883,18 +889,18 @@ async function processMessage(jid, text) {
       const query = session.queryYear.replace("{YEAR}", selectedYear);
       console.log(`[YEAR] Tahun dipilih: ${selectedYear} | Query: ${query}`);
       const activeItem = DATA_MENU[session.menu]?.items[session.subItem];
-      const chart = activeItem?.chartPath;
+      const chart = activeItem?.chartName;
       const ans = await handleLLMQuery(jid, query);
-      return chart ? { text: ans, chartPath: chart } : ans;
+      return chart ? { text: ans, chartName: chart } : ans;
     }
 
     if (!isNaN(num) && num === maxYears + 1) {
       // Pilihan "Semua tahun"
       console.log(`[YEAR] Semua tahun | Query: ${session.queryAll}`);
       const activeItem = DATA_MENU[session.menu]?.items[session.subItem];
-      const chart = activeItem?.chartPath;
+      const chart = activeItem?.chartName;
       const ans = await handleLLMQuery(jid, session.queryAll);
-      return chart ? { text: ans, chartPath: chart } : ans;
+      return chart ? { text: ans, chartName: chart } : ans;
     }
 
     // Jika angka murni tetapi di luar range pilihan tahun
@@ -1041,13 +1047,25 @@ async function startBridge() {
         pushHistory(jid, "user",      text);
         pushHistory(jid, "assistant", replyText);
 
-        // Kirim gambar diagram terlebih dahulu jika tersedia
-        if (typeof res === "object" && res.chartPath && fs.existsSync(res.chartPath)) {
-          console.log(`[CHART] Mengirim gambar diagram: ${res.chartPath}`);
-          await sock.sendMessage(jid, {
-            image: { url: res.chartPath },
-            caption: "📊 Diagram Grafik Data Statistik Resmi BPS Kabupaten Lampung Selatan",
-          });
+        // Kirim gambar diagram secara dinamis via API backend jika tersedia
+        if (typeof res === "object" && res.chartName) {
+          const CHART_API = process.env.CHART_BACKEND_URL || "http://localhost:8001/api/chart";
+          try {
+            const style = res.chartStyle || "bar";
+            console.log(`[CHART] Generate diagram on-demand: ${res.chartName} (style: ${style})`);
+            const imgRes = await axios.get(`${CHART_API}/${res.chartName}?style=${style}`, {
+              responseType: "arraybuffer",
+              timeout: 30000,
+            });
+            const imgBuffer = Buffer.from(imgRes.data);
+            await sock.sendMessage(jid, {
+              image: imgBuffer,
+              caption: "📊 Diagram Grafik Data Statistik Resmi BPS Kabupaten Lampung Selatan",
+            });
+            console.log(`[CHART] Diagram '${res.chartName}' berhasil dikirim.`);
+          } catch (chartErr) {
+            console.error(`[CHART] Gagal generate diagram '${res.chartName}':`, chartErr.message);
+          }
         }
 
         await sock.sendMessage(jid, { text: replyText });
