@@ -3,8 +3,6 @@
 #  File ini melindungi data sensitif agar TIDAK terupload ke GitHub
 # ════════════════════════════════════════════════════════════════
 
-
-# ─── 🔴 SANGAT RAHASIA — WAJIB TIDAK DI-UPLOAD ──────────────────
 # Sesi login WhatsApp (berisi kunci enkripsi & token pribadi)
 wa-bridge/auth_state/
 
@@ -12,29 +10,24 @@ wa-bridge/auth_state/
 .env
 **/.env
 
-# ─── 📊 DATA STATISTIK BPS (Data Internal Kantor) ───────────────
 # Data markdown yang berisi data sensus & statistik BPS
 llamaindex-docs-agent/backend/data/sensus/
 llamaindex-docs-agent/backend/data/docs/
 
-# ─── 🗄️ DATABASE VECTOR / INDEX (Di-generate otomatis) ──────────
 # Folder ini dibuat otomatis saat chatbot pertama dijalankan
 llamaindex-docs-agent/backend/storage/
 llamaindex-docs-agent/backend/pipeline_storage/
 
-# ─── 📦 LIBRARY & PACKAGE (Di-install via npm/pip) ──────────────
 # Tidak perlu di-upload, cukup jalankan: npm install & pip install
 wa-bridge/node_modules/
 llamaindex-docs-agent/frontend/node_modules/
 llamaindex-docs-agent/backend/venv/
 llamaindex-docs-agent/backend/.venv/
 
-# ─── 📝 LOG & FILE SEMENTARA ────────────────────────────────────
 logs/
 *.log
 wa-bridge/charts/*.png
 
-# ─── 🐍 PYTHON CACHE ────────────────────────────────────────────
 __pycache__/
 *.py[cod]
 *.pyo
@@ -44,13 +37,11 @@ __pycache__/
 dist/
 build/
 
-# ─── 💻 FILE SISTEM OPERASI ─────────────────────────────────────
 .DS_Store
 Thumbs.db
 desktop.ini
 ehthumbs.db
 
-# ─── 🛠️ EDITOR / IDE ────────────────────────────────────────────
 .vscode/
 .idea/
 *.swp
