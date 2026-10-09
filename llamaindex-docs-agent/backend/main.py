@@ -25,12 +25,12 @@ async def lifespan(app: FastAPI):
         loop = asyncio.new_event_loop()
         asyncio.set_event_loop(loop)
         try:
-            logger.info("🔄 Memulai pre-warming agent (ingest + vector index)...")
+            logger.info("Memulai pre-warming agent (ingest + vector index)...")
             from app.utils.index import get_agent
             loop.run_until_complete(get_agent())
-            logger.info("✅ Agent siap! Backend sudah bisa menerima pertanyaan.")
+            logger.info("Agent siap! Backend sudah bisa menerima pertanyaan.")
         except Exception as e:
-            logger.error(f"❌ Pre-warm gagal: {e}", exc_info=True)
+            logger.error(f"Pre-warm gagal: {e}", exc_info=True)
         finally:
             loop.close()
 

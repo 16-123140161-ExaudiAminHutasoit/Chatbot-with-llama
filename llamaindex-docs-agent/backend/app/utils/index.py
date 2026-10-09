@@ -346,10 +346,10 @@ async def get_agent():
     )
 
     if index_ready:
-        logger.info("⚡ Vector index ditemukan di cache, memuat langsung...")
+        logger.info("Vector index ditemukan di cache, memuat langsung...")
         docs = []
     else:
-        logger.info("📂 Vector index belum ada. Memulai ingest dokumen...")
+        logger.info("Vector index belum ada. Memulai ingest dokumen...")
         if os.path.exists(PIPELINE_STORAGE_DIR):
             docstore = SimpleDocumentStore.from_persist_dir(PIPELINE_STORAGE_DIR)
         else:
@@ -359,7 +359,7 @@ async def get_agent():
             directory=f"{DATA_DIR}/sensus",
             docstore=docstore,
         )
-        logger.info(f"✅ Ingest selesai: {len(docs)} dokumen siap untuk diindex.")
+        logger.info(f"Ingest selesai: {len(docs)} dokumen siap untuk diindex.")
 
     bps_query_engine = _build_bps_query_engine(
         STORAGE_DIR, docs, callback_manager=callback_manager
@@ -368,7 +368,7 @@ async def get_agent():
     _GLOBAL_AGENT = bps_query_engine
     _GLOBAL_HANDLER = handler
 
-    logger.info("✅ Query engine siap! Backend siap menerima pertanyaan.")
+    logger.info("Query engine siap! Backend siap menerima pertanyaan.")
     return bps_query_engine
 
 

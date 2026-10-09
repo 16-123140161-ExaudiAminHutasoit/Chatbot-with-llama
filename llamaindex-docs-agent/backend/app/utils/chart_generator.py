@@ -448,31 +448,41 @@ def chart_sex_ratio(style: str = "bar") -> io.BytesIO:
                           ["2017","2018","2020","2021","2022","2023","2024"],
                           [104.2, 104.1, 103.8, 103.9, 104.0, 104.3, 104.5], style=style)
 
+def chart_pdrb_pengeluaran_adhb(style: str = "bar") -> io.BytesIO:
+    return _generic_chart("PDRB Pengeluaran ADHB Lampung Selatan (2010–2025)",
+                          ["2010","2015","2020","2023","2024","2025"],
+                          [18535.51, 31412.78, 44293.00, 55994.57, 60320.74, 65658.66], style=style)
+
+def chart_pdrb_pengeluaran_adhk(style: str = "bar") -> io.BytesIO:
+    return _generic_chart("PDRB Pengeluaran ADHK Riil Lampung Selatan (2010–2025)",
+                          ["2010","2015","2020","2023","2024","2025"],
+                          [18535.51, 24654.68, 29743.30, 33528.67, 35077.05, 37081.66], style=style)
+
 def chart_pdrb_pengeluaran(style: str = "bar") -> io.BytesIO:
-    return _generic_chart("PDRB Pengeluaran ADHB (2010–2024)",
-                          ["2010","2015","2020","2023","2024"],
-                          [18535.51, 31412.78, 44293.00, 55994.57, 60320.74], style=style)
+    return chart_pdrb_pengeluaran_adhb(style=style)
 
 
 # Dispatcher Map
 CHART_MAP = {
-    "chart_kemiskinan":          chart_kemiskinan,
-    "chart_penduduk":            chart_penduduk,
-    "chart_laju_ekonomi":        chart_laju_ekonomi,
-    "chart_ipm":                 chart_ipm,
-    "chart_ketenagakerjaan":     chart_ketenagakerjaan,
-    "chart_apk":                 chart_apk,
-    "chart_apm":                 chart_apm,
-    "chart_gini_ratio":          chart_gini_ratio,
-    "chart_pdrb_adhb":           chart_pdrb_adhb,
-    "chart_pdrb_adhk":           chart_pdrb_adhk,
-    "chart_kepadatan_penduduk":  chart_kepadatan_penduduk,
-    "chart_laju_penduduk":       chart_laju_penduduk,
-    "chart_persentase_penduduk": chart_persentase_penduduk,
-    "chart_piramida_penduduk":   chart_piramida_penduduk,
-    "chart_proyeksi_penduduk":   chart_proyeksi_penduduk,
-    "chart_sex_ratio":           chart_sex_ratio,
-    "chart_pdrb_pengeluaran":    chart_pdrb_pengeluaran,
+    "chart_kemiskinan":            chart_kemiskinan,
+    "chart_penduduk":              chart_penduduk,
+    "chart_laju_ekonomi":          chart_laju_ekonomi,
+    "chart_ipm":                   chart_ipm,
+    "chart_ketenagakerjaan":       chart_ketenagakerjaan,
+    "chart_apk":                   chart_apk,
+    "chart_apm":                   chart_apm,
+    "chart_gini_ratio":            chart_gini_ratio,
+    "chart_pdrb_adhb":             chart_pdrb_adhb,
+    "chart_pdrb_adhk":             chart_pdrb_adhk,
+    "chart_kepadatan_penduduk":    chart_kepadatan_penduduk,
+    "chart_laju_penduduk":         chart_laju_penduduk,
+    "chart_persentase_penduduk":   chart_persentase_penduduk,
+    "chart_piramida_penduduk":     chart_piramida_penduduk,
+    "chart_proyeksi_penduduk":     chart_proyeksi_penduduk,
+    "chart_sex_ratio":             chart_sex_ratio,
+    "chart_pdrb_pengeluaran":      chart_pdrb_pengeluaran,
+    "chart_pdrb_pengeluaran_adhb": chart_pdrb_pengeluaran_adhb,
+    "chart_pdrb_pengeluaran_adhk": chart_pdrb_pengeluaran_adhk,
 }
 
 

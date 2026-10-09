@@ -44,6 +44,9 @@ function getSession(jid) {
       yearList: null,
       queryAll: null,
       queryYear: null,
+      lastChartName: null,
+      lastChartLabel: null,
+      lastChartStyle: "bar",
     });
   }
   return userSessions.get(jid);
@@ -84,91 +87,91 @@ function clearHistory(jid) {
 
 const MENU_UTAMA = [
   "====================================",
-  "🏛️ *LAYANAN INFORMASI BPS LAMPUNG SELATAN*",
+  " *LAYANAN INFORMASI BPS LAMPUNG SELATAN*",
   "====================================",
   "",
   "Selamat datang di Layanan Informasi Resmi BPS Kabupaten Lampung Selatan.",
   "",
-  "📋 *Silakan Pilih Topik Data (Ketik Angkanya):*",
+  " *Silakan Pilih Topik Data (Ketik Angkanya):*",
   "",
-  "1️⃣ *Tentang BPS & Sensus Ekonomi*",
-  "2️⃣ *Kependudukan (Demografi)*",
-  "3️⃣ *Sosial, Pendidikan & Ketenagakerjaan*",
-  "4️⃣ *Ekonomi & PDRB*",
-  "5️⃣ *Tanya Jawab Bebas (Konsultasi AI)*",
+  "1. *Tentang BPS & Sensus Ekonomi*",
+  "2. *Kependudukan (Demografi)*",
+  "3. *Sosial, Pendidikan & Ketenagakerjaan*",
+  "4. *Ekonomi & PDRB*",
+  "5. *Tanya Jawab Bebas (Konsultasi AI)*",
   "",
-  "👉 _Ketik nomor pilihan Anda (1 - 5)._",
+  " _Ketik nomor pilihan Anda (1 - 5)._",
 ].join("\n");
 
 const SUBMENU = {
   1: [
     "====================================",
-    "ℹ️ *TENTANG BPS & SENSUS EKONOMI*",
+    " *TENTANG BPS & SENSUS EKONOMI*",
     "====================================",
     "",
     "Pilih informasi yang Anda butuhkan:",
     "",
-    "1️⃣ Profil & Kontak BPS Lampung Selatan",
-    "2️⃣ Jam Layanan & Pelayanan Statistik (PST)",
-    "3️⃣ FAQ & Cara Pengaduan",
-    "4️⃣ Cara Verifikasi Petugas Sensus",
-    "5️⃣ Informasi Sensus Ekonomi 2026 (SE2026)",
+    "1. Profil & Kontak BPS Lampung Selatan",
+    "2. Jam Layanan & Pelayanan Statistik (PST)",
+    "3. FAQ & Cara Pengaduan",
+    "4. Cara Verifikasi Petugas Sensus",
+    "5. Informasi Sensus Ekonomi 2026 (SE2026)",
     "",
-    "↩️ _Ketik 0 untuk kembali ke Menu Utama._",
+    " _Ketik 0 untuk kembali ke Menu Utama._",
   ].join("\n"),
 
   2: [
     "====================================",
-    "👥 *KEPENDUDUKAN (DEMOGRAFI)*",
+    " *KEPENDUDUKAN (DEMOGRAFI)*",
     "====================================",
     "",
     "Pilih data statistik yang Anda butuhkan:",
     "",
-    "1️⃣ Jumlah Penduduk",
-    "2️⃣ Kepadatan Penduduk",
-    "3️⃣ Laju Pertumbuhan Penduduk",
-    "4️⃣ Persentase Penduduk per Kecamatan",
-    "5️⃣ Piramida Penduduk (Kelompok Umur)",
-    "6️⃣ Proyeksi Penduduk",
-    "7️⃣ Rasio Jenis Kelamin (Sex Ratio)",
+    "1. Jumlah Penduduk",
+    "2. Kepadatan Penduduk",
+    "3. Laju Pertumbuhan Penduduk",
+    "4. Persentase Penduduk per Kecamatan",
+    "5. Piramida Penduduk (Kelompok Umur)",
+    "6. Proyeksi Penduduk",
+    "7. Rasio Jenis Kelamin (Sex Ratio)",
     "",
-    "↩️ _Ketik 0 untuk kembali ke Menu Utama._",
+    " _Ketik 0 untuk kembali ke Menu Utama._",
   ].join("\n"),
 
   3: [
     "====================================",
-    "🎓 *SOSIAL, PENDIDIKAN & KETENAGAKERJAAN*",
+    " *SOSIAL, PENDIDIKAN & KETENAGAKERJAAN*",
     "====================================",
     "",
     "Pilih data statistik yang Anda butuhkan:",
     "",
-    "1️⃣ Angka Partisipasi Kasar (APK)",
-    "2️⃣ Angka Partisipasi Murni (APM)",
-    "3️⃣ Indeks Pembangunan Manusia (IPM)",
-    "4️⃣ Indikator Kemiskinan",
-    "5️⃣ Tingkat Partisipasi Angkatan Kerja (TPAK)",
-    "6️⃣ Tingkat Pengangguran Terbuka (TPT)",
-    "7️⃣ Gini Ratio (Rasio Gini)",
+    "1. Angka Partisipasi Kasar (APK)",
+    "2. Angka Partisipasi Murni (APM)",
+    "3. Indeks Pembangunan Manusia (IPM)",
+    "4. Indikator Kemiskinan",
+    "5. Tingkat Partisipasi Angkatan Kerja (TPAK)",
+    "6. Tingkat Pengangguran Terbuka (TPT)",
+    "7. Gini Ratio (Rasio Gini)",
     "",
-    "↩️ _Ketik 0 untuk kembali ke Menu Utama._",
+    " _Ketik 0 untuk kembali ke Menu Utama._",
   ].join("\n"),
 
   4: [
     "====================================",
-    "📈 *EKONOMI & PDRB*",
+    " *EKONOMI & PDRB*",
     "====================================",
     "",
     "Pilih data statistik yang Anda butuhkan:",
     "",
-    "1️⃣ PDRB Lapangan Usaha - ADHB",
-    "2️⃣ PDRB Lapangan Usaha - ADHK",
-    "3️⃣ PDRB Pengeluaran - ADHB",
-    "4️⃣ PDRB Pengeluaran - ADHK",
-    "5️⃣ Laju Pertumbuhan PDRB",
-    "6️⃣ Distribusi PDRB",
-    "7️⃣ Gini Ratio",
+    "1. PDRB Lapangan Usaha - ADHB",
+    "2. PDRB Lapangan Usaha - ADHK",
+    "3. PDRB Pengeluaran - ADHB",
+    "4. PDRB Pengeluaran - ADHK",
+    "5. Laju Pertumbuhan PDRB",
+    "6. Distribusi PDRB",
+    "7. Gini Ratio",
     "",
-    "↩️ _Ketik 0 untuk kembali ke Menu Utama._",
+    " _Ketik 0 untuk kembali ke Menu Utama._",
   ].join("\n"),
 };
 
@@ -178,96 +181,96 @@ const SUBMENU = {
 const STATIC_M1 = {
   1: [
     "====================================",
-    "📌 *PROFIL & KONTAK BPS LAMPUNG SELATAN*",
+    " *PROFIL & KONTAK BPS LAMPUNG SELATAN*",
     "====================================",
     "",
-    "🏢 *Instansi:* BPS Kabupaten Lampung Selatan",
-    "📍 *Alamat:* Jl. Mustafa Kemal No. 24, Kalianda, Lampung Selatan 35513",
-    "📞 *Telepon:* (0727) 322241",
-    "✉️ *Email:* bps1803@bps.go.id",
-    "💬 *WhatsApp:* +62 858-1911-1803",
-    "🌐 *Website:* lampungselatankab.bps.go.id",
+    " *Instansi:* BPS Kabupaten Lampung Selatan",
+    " *Alamat:* Jl. Mustafa Kemal No. 24, Kalianda, Lampung Selatan 35513",
+    " *Telepon:* (0727) 322241",
+    " *Email:* bps1803@bps.go.id",
+    " *WhatsApp:* +62 858-1911-1803",
+    " *Website:* lampungselatankab.bps.go.id",
     "",
     "─────────────",
-    "ℹ️ *Tentang BPS Lamsel:*",
+    " *Tentang BPS Lamsel:*",
     "BPS Kabupaten Lampung Selatan adalah lembaga pemerintah non-kementerian yang bertanggung jawab dalam pengumpulan, pengolahan, dan penyebaran data statistik di wilayah Kabupaten Lampung Selatan.",
     "",
-    "👉 _Ketik 0 untuk kembali ke Menu Utama._",
+    " _Ketik 0 untuk kembali ke Menu Utama._",
   ].join("\n"),
 
   2: [
     "====================================",
-    "🕒 *JAM LAYANAN & PST (PELAYANAN STATISTIK)*",
+    " *JAM LAYANAN & PST (PELAYANAN STATISTIK)*",
     "====================================",
     "",
-    "⏱️ *Jam Operasional Kantor:*",
+    " *Jam Operasional Kantor:*",
     "• Senin - Kamis : 08.00 - 15.30 WIB",
     "• Jumat         : 08.00 - 15.00 WIB",
     "• Sabtu & Minggu: Tutup (Hari Libur)",
     "",
     "─────────────",
-    "📋 *Layanan PST Meliputi:*",
+    " *Layanan PST Meliputi:*",
     "• Permintaan & konsultasi data statistik",
     "• Penjualan publikasi BPS",
     "• Rekomendasi kegiatan statistik",
     "",
     "─────────────",
-    "📞 *Hubungi Kami:*",
+    " *Hubungi Kami:*",
     "• Telepon : (0727) 322241",
     "• Email   : bps1803@bps.go.id",
     "• WA      : +62 858-1911-1803",
     "",
-    "👉 _Ketik 0 untuk kembali ke Menu Utama._",
+    " _Ketik 0 untuk kembali ke Menu Utama._",
   ].join("\n"),
 
   3: [
     "====================================",
-    "❓ *FAQ & CARA PENGAJUAN PENGADUAN*",
+    " *FAQ & CARA PENGAJUAN PENGADUAN*",
     "====================================",
     "",
-    "💡 *Pertanyaan Umum (FAQ):*",
+    " *Pertanyaan Umum (FAQ):*",
     "",
-    "🔹 *T: Bagaimana cara mendapatkan data BPS Lamsel?*",
+    " *T: Bagaimana cara mendapatkan data BPS Lamsel?*",
     "   *J:* Kunjungi website lampungselatankab.bps.go.id, datang langsung ke kantor PST, atau hubungi kontak resmi kami.",
     "",
-    "🔹 *T: Apakah publikasi BPS tersedia secara gratis?*",
+    " *T: Apakah publikasi BPS tersedia secara gratis?*",
     "   *J:* Sebagian besar publikasi tersedia gratis di website BPS. Beberapa publikasi khusus mungkin dikenakan biaya cetak.",
     "",
-    "🔹 *T: Data apa saja yang tersedia di BPS Lamsel?*",
+    " *T: Data apa saja yang tersedia di BPS Lamsel?*",
     "   *J:* Data kependudukan, ekonomi, sosial, pendidikan, ketenagakerjaan, kemiskinan, PDRB, IPM, dan indikator statistik lainnya.",
     "",
     "─────────────",
-    "📢 *Cara Menyampaikan Pengaduan:*",
+    " *Cara Menyampaikan Pengaduan:*",
     "• *Email*   : bps1803@bps.go.id",
     "• *Telepon* : (0727) 322241",
     "• *WhatsApp*: +62 858-1911-1803",
     "• *Alamat*  : Jl. Mustafa Kemal No. 24, Kalianda",
     "",
-    "👉 _Ketik 0 untuk kembali ke Menu Utama._",
+    " _Ketik 0 untuk kembali ke Menu Utama._",
   ].join("\n"),
 
   4: [
     "====================================",
-    "🛡️ *VERIFIKASI PETUGAS SENSUS BPS*",
+    " *VERIFIKASI PETUGAS SENSUS BPS*",
     "====================================",
     "",
-    "🔍 *Ciri-Ciri Petugas Resmi BPS:*",
+    " *Ciri-Ciri Petugas Resmi BPS:*",
     "• Membawa Surat Tugas Resmi BPS",
     "• Menggunakan Tanda Pengenal / ID Card BPS yang berlaku",
     "• Membawa dokumen / kuesioner resmi BPS",
     "",
     "─────────────",
-    "✅ *Langkah Verifikasi:*",
+    " *Langkah Verifikasi:*",
     "1. Minta petugas menunjukkan Surat Tugas & ID Card.",
     "2. Cocokkan nama petugas dengan dokumen.",
     "3. Konfirmasi ke kantor BPS via Telp: (0727) 322241 / WA: +62 858-1911-1803.",
     "",
     "─────────────",
-    "⚠️ *PENTING - Petugas BPS TIDAK PERNAH:*",
+    " *PENTING - Petugas BPS TIDAK PERNAH:*",
     "• Meminta uang / pembayaran dalam bentuk apapun.",
     "• Meminta data perbankan, PIN, atau kata sandi.",
     "",
-    "👉 _Ketik 0 untuk kembali ke Menu Utama._",
+    " _Ketik 0 untuk kembali ke Menu Utama._",
   ].join("\n"),
 
   5: [
@@ -434,14 +437,14 @@ const DATA_MENU = {
         years: ["2024", "2023", "2020", "2015", "2010"],
         queryAll:  "Tampilkan seluruh data PDRB pengeluaran atas dasar harga berlaku ADHB Kabupaten Lampung Selatan dari semua tahun (2010 s.d. 2024)",
         queryYear: "Berapa total nilai PDRB pengeluaran atas dasar harga berlaku ADHB Kabupaten Lampung Selatan pada tahun {YEAR} dalam Milyar Rupiah?",
-        chartName: "chart_pdrb_pengeluaran",
+        chartName: "chart_pdrb_pengeluaran_adhb",
       },
       4: {
         label: "PDRB Pengeluaran - ADHK",
         years: ["2024", "2023", "2020", "2015", "2010"],
         queryAll:  "Tampilkan seluruh data PDRB pengeluaran atas dasar harga konstan ADHK Kabupaten Lampung Selatan dari semua tahun (2010 s.d. 2024)",
         queryYear: "Berapa total nilai PDRB pengeluaran atas dasar harga konstan ADHK Kabupaten Lampung Selatan pada tahun {YEAR} dalam Milyar Rupiah?",
-        chartName: "chart_pdrb_pengeluaran",
+        chartName: "chart_pdrb_pengeluaran_adhk",
       },
       5: {
         label: "Laju Pertumbuhan PDRB",
@@ -708,9 +711,11 @@ async function processMessage(jid, text) {
       { keys: ["gini","ketimpangan","rasio gini"],           chartName: "chart_gini_ratio",           label: "Gini Ratio" },
       { keys: ["ketenagakerjaan","tpak","tpt","angkatan kerja","pengangguran"], chartName: "chart_ketenagakerjaan", label: "Ketenagakerjaan" },
       { keys: ["laju ekonomi","pertumbuhan ekonomi","laju pdrb","pertumbuhan pdrb"], chartName: "chart_laju_ekonomi", label: "Laju Pertumbuhan PDRB" },
+      { keys: ["pengeluaran adhk","pdrb pengeluaran adhk","pengeluaran konstan"], chartName: "chart_pdrb_pengeluaran_adhk", label: "PDRB Pengeluaran ADHK" },
+      { keys: ["pengeluaran adhb","pdrb pengeluaran adhb","pengeluaran berlaku"], chartName: "chart_pdrb_pengeluaran_adhb", label: "PDRB Pengeluaran ADHB" },
       { keys: ["pdrb adhb","harga berlaku"],                 chartName: "chart_pdrb_adhb",            label: "PDRB ADHB" },
       { keys: ["pdrb adhk","harga konstan"],                 chartName: "chart_pdrb_adhk",            label: "PDRB ADHK" },
-      { keys: ["pdrb pengeluaran","pengeluaran"],            chartName: "chart_pdrb_pengeluaran",     label: "PDRB Pengeluaran" },
+      { keys: ["pdrb pengeluaran","pengeluaran"],            chartName: "chart_pdrb_pengeluaran_adhb", label: "PDRB Pengeluaran ADHB" },
       { keys: ["pdrb"],                                      chartName: "chart_pdrb_adhb",            label: "PDRB" },
       { keys: ["piramida","kelompok umur"],                  chartName: "chart_piramida_penduduk",    label: "Piramida Penduduk" },
       { keys: ["proyeksi penduduk"],                         chartName: "chart_proyeksi_penduduk",    label: "Proyeksi Penduduk" },
@@ -722,36 +727,47 @@ async function processMessage(jid, text) {
     ];
 
     let requestedStyle = "bar";
-    if (/garis|line|tren|trend|kurva|lain|variasi|opsi|beda/i.test(cleanLower)) {
+    if (/garis|line|tren|trend|kurva/i.test(cleanLower)) {
       requestedStyle = "line";
     } else if (/pie|lingkaran|donat|donut|persen|distribusi/i.test(cleanLower)) {
       requestedStyle = "pie";
+    } else if (/lain|variasi|opsi|beda/i.test(cleanLower)) {
+      // Jika pengguna meminta 'diagram yang lain' tanpa sebut jenis, rotasi otomatis (bar -> line -> pie -> bar)
+      const curStyle = session.lastChartStyle || "bar";
+      if (curStyle === "bar") requestedStyle = "line";
+      else if (curStyle === "line") requestedStyle = "pie";
+      else requestedStyle = "bar";
     }
 
+    // 1. Cek apakah ada kata kunci topik tertentu (kemiskinan, ipm, dll)
     for (const entry of CHART_KEYWORDS) {
       if (entry.keys.some((k) => cleanLower.includes(k))) {
         console.log(`[CHART-KEYWORD] Request diagram '${entry.label}' style='${requestedStyle}' via kata kunci.`);
+        setSession(jid, {
+          lastChartName: entry.chartName,
+          lastChartLabel: entry.label,
+          lastChartStyle: requestedStyle,
+        });
         return {
-          text: [
-            `-- DIAGRAM ${entry.label.toUpperCase()} (${requestedStyle.toUpperCase()}) --`,
-            "",
-            `Berikut adalah diagram grafik data statistik resmi BPS Kabupaten Lampung Selatan untuk indikator ${entry.label}.`,
-            "",
-            "Untuk data lengkap dengan rincian angka, silakan pilih dari menu:",
-            "Ketik 2 (Kependudukan), 3 (Sosial/Pendidikan), atau 4 (Ekonomi/PDRB)",
-            "",
-            "Tautan Referensi Resmi BPS Lamsel:",
-            "https://lampungselatankab.bps.go.id",
-            "",
-            "Ketik 0 untuk kembali ke Menu Utama.",
-          ].join("\n"),
+          text: ` Berikut adalah diagram grafik statistik resmi BPS Kabupaten Lampung Selatan untuk *${entry.label}* (${requestedStyle.toUpperCase()}).\n\nKetik 0 untuk kembali ke Menu Utama.`,
           chartName: entry.chartName,
           chartStyle: requestedStyle,
         };
       }
     }
 
-    // Tidak ada kata kunci yang cocok — tampilkan daftar diagram yang tersedia
+    // 2. Jika tidak sebut nama data tapi pengguna minta "diagram yang lain" dan ada riwayat diagram sebelumnya
+    if (/lain|variasi|opsi|beda|garis|line|pie|lingkaran|batang|bar/i.test(cleanLower) && session.lastChartName) {
+      console.log(`[CHART-CONTEXT] Mengganti gaya diagram '${session.lastChartLabel}' menjadi '${requestedStyle}' berdasarkan konteks terakhir.`);
+      setSession(jid, { lastChartStyle: requestedStyle });
+      return {
+        text: ` Berikut adalah diagram variasi bentuk *${requestedStyle.toUpperCase()}* untuk *${session.lastChartLabel}* BPS Kabupaten Lampung Selatan.\n\nKetik 0 untuk kembali ke Menu Utama.`,
+        chartName: session.lastChartName,
+        chartStyle: requestedStyle,
+      };
+    }
+
+    // 3. Jika benar-benar baru dan tidak ada kata kunci yang cocok — tampilkan daftar diagram yang tersedia
     return [
       "Diagram yang tersedia di sistem kami:",
       "",
@@ -775,9 +791,15 @@ async function processMessage(jid, text) {
     ].join("\n");
   }
 
-  // Helper: Cek apakah input adalah angka murni (tanpa huruf/kata)
-
+  // Helper: Cek apakah input adalah angka murni (tanpa huruf/titik/koma)
+  // Mencegah input seperti "1abc" atau "1.5" dibaca sebagai angka valid.
   const isPureNumber = /^\d+$/.test(cleanText);
+
+  // Fungsi parse integer yang ketat: hanya menerima string angka bulat murni (misal "1", "2")
+  // parseInt("1abc") → 1 (salah), parseStrictInt("1abc") → NaN (benar)
+  function parseStrictInt(str) {
+    return /^\d+$/.test(str) ? parseInt(str, 10) : NaN;
+  }
 
   // ── 3. Level MAIN (atau INIT) ─────────────────────────────────────────────
   if (session.level === "main" || session.level === "init") {
@@ -820,7 +842,7 @@ async function processMessage(jid, text) {
 
   // ── 4. Level SUBMENU ──────────────────────────────────────────────────────
   if (session.level === "submenu") {
-    const num = parseInt(cleanText, 10);
+    const num = parseStrictInt(cleanText);
 
     // ── 4a. Menu 1: Konten statis ──────────────────────────────────────────
     if (session.menu === 1) {
@@ -837,28 +859,16 @@ async function processMessage(jid, text) {
       return await handleLLMQuery(jid, cleanText);
     }
 
-    // ── 4b. Menu 2, 3, 4: Sub-menu dinamis (Langsung Diagram & Teks Ringkas Instan)
+    // ── 4b. Menu 2, 3, 4: Sub-menu dinamis (Kembalikan DATA TEKS STATISTIK LENGKAP tanpa diagram)
     if ([2, 3, 4].includes(session.menu)) {
       const menuData = DATA_MENU[session.menu];
 
       if (!isNaN(num) && num >= 1 && num <= menuData.maxItem) {
         const item = menuData.items[num];
+        const query = item.directQuery || item.queryAll || `Tampilkan seluruh data statistik lengkap resmi BPS Kabupaten Lampung Selatan untuk indikator ${item.label}`;
 
-        console.log(`[INSTANT EXEC] Mengirimkan diagram & ringkasan instan untuk: ${item.label}`);
-        
-        // Teks penjelasan sederhana & ringkas (langsung terkirim instan 1-2 detik)
-        const simpleText = [
-          `-- ${item.label.toUpperCase()} --`,
-          "",
-          `Berikut adalah diagram grafik dan ringkasan data statistik resmi BPS Kabupaten Lampung Selatan untuk indikator ${item.label}.`,
-          "",
-          "Tautan Referensi Resmi BPS Lamsel:",
-          "https://lampungselatankab.bps.go.id",
-          "",
-          "Ketik 0 untuk kembali ke Menu Utama."
-        ].join("\n");
-
-        return item.chartName ? { text: simpleText, chartName: item.chartName } : simpleText;
+        console.log(`[DATA-EXEC] Mengambil data teks statistik RAG untuk: ${item.label}`);
+        return await handleLLMQuery(jid, query);
       }
 
       // Jika angka murni tetapi di luar range pilihan sub-menu
@@ -879,7 +889,7 @@ async function processMessage(jid, text) {
 
   // ── 5. Level YEAR_SELECT: Pengguna memilih tahun ──────────────────────────
   if (session.level === "year_select") {
-    const num      = parseInt(cleanText, 10);
+    const num      = parseStrictInt(cleanText);
     const years    = session.yearList  || [];
     const maxYears = years.length;
 
@@ -1028,7 +1038,7 @@ async function startBridge() {
         const cleanText = text.trim().toLowerCase();
         if (cleanText === "!reset" || cleanText === "/reset" || cleanText === "reset barcode" || cleanText === "reset qr") {
           await sock.sendMessage(jid, {
-            text: "⚠️ *MENGHAPUS SESI & RESET BARCODE*\n\nSesi WhatsApp sedang dihapus. QR Code / Barcode baru akan segera muncul di terminal server...",
+            text: " *MENGHAPUS SESI & RESET BARCODE*\n\nSesi WhatsApp sedang dihapus. QR Code / Barcode baru akan segera muncul di terminal server...",
           });
           console.log("[RESET] Perintah reset diterima dari WhatsApp. Menghapus auth_state...");
           setTimeout(() => {
@@ -1047,7 +1057,7 @@ async function startBridge() {
         pushHistory(jid, "user",      text);
         pushHistory(jid, "assistant", replyText);
 
-        // Kirim gambar diagram secara dinamis via API backend jika tersedia
+        // Kirim gambar diagram secara dinamis via API backend jika permintaan diagram
         if (typeof res === "object" && res.chartName) {
           const CHART_API = process.env.CHART_BACKEND_URL || "http://localhost:8001/api/chart";
           try {
@@ -1060,15 +1070,17 @@ async function startBridge() {
             const imgBuffer = Buffer.from(imgRes.data);
             await sock.sendMessage(jid, {
               image: imgBuffer,
-              caption: "📊 Diagram Grafik Data Statistik Resmi BPS Kabupaten Lampung Selatan",
+              caption: replyText || " Diagram Grafik Data Statistik Resmi BPS Kabupaten Lampung Selatan",
             });
             console.log(`[CHART] Diagram '${res.chartName}' berhasil dikirim.`);
           } catch (chartErr) {
             console.error(`[CHART] Gagal generate diagram '${res.chartName}':`, chartErr.message);
+            await sock.sendMessage(jid, { text: replyText });
           }
+        } else {
+          // Kirim balasan teks biasa jika bukan diagram
+          await sock.sendMessage(jid, { text: replyText });
         }
-
-        await sock.sendMessage(jid, { text: replyText });
         console.log(`[REPLY] ke ${numberOnly}: ${replyText.substring(0, 100)}...`);
       } catch (err) {
         console.error("[ERROR] Gagal memproses pesan:", err);
@@ -1090,16 +1102,16 @@ rl.on("line", (line) => {
   const input = line.trim().toLowerCase();
   if (input === "r" || input === "reset" || input === "qr" || input === "reset barcode") {
     console.log("\n========================================================");
-    console.log(" 🔄 [PERINTAH TERMINAL] RESET SESI & GENERATE BARCODE BARU");
+    console.log("  [PERINTAH TERMINAL] RESET SESI & GENERATE BARCODE BARU");
     console.log("========================================================");
     console.log("Menghapus folder sesi auth_state...");
 
     const fs = require("fs");
     if (fs.existsSync("./auth_state")) {
       fs.rmSync("./auth_state", { recursive: true, force: true });
-      console.log("✅ Folder auth_state berhasil dihapus!");
+      console.log(" Folder auth_state berhasil dihapus!");
     } else {
-      console.log("ℹ️ Folder auth_state tidak ditemukan (sudah bersih).");
+      console.log(" Folder auth_state tidak ditemukan (sudah bersih).");
     }
 
     console.log("Memulai ulang koneksi untuk memunculkan QR Code / Barcode baru...\n");
@@ -1109,7 +1121,7 @@ rl.on("line", (line) => {
   }
 });
 
-console.log("💡 [PETUNJUK TERMINAL] Ketik 'reset' atau 'r' lalu tekan ENTER kapan saja untuk menghapus sesi & scan QR Code baru.");
+console.log(" [PETUNJUK TERMINAL] Ketik 'reset' atau 'r' lalu tekan ENTER kapan saja untuk menghapus sesi & scan QR Code baru.");
 
 startBridge().catch((err) => {
   console.error("Gagal memulai bridge:", err);
