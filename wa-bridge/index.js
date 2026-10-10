@@ -574,6 +574,11 @@ function expandAbbreviations(text) {
     "se2026":  "Sensus Ekonomi 2026 (SE2026)",
     "pst":     "Pelayanan Statistik Terpadu (PST)",
     "lda":     "Lampung Selatan Dalam Angka (LDA)",
+    "lamsel":  "Lampung Selatan",
+    "thn":     "tahun",
+    "org":     "orang",
+    "brpa":    "berapa",
+    "ttg":     "tentang",
     "info":    "informasi","jd":   "jadi",    "kl":   "kalau",
     "kalo":    "kalau",
   };
