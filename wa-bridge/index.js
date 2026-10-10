@@ -544,24 +544,38 @@ async function askBackend(jid, userText) {
 // ─────────────────────────────────────────────────────────────────────────────
 function expandAbbreviations(text) {
   const abbrevMap = {
-    "dmn":   "dimana",  "dimna": "dimana",  "brp":  "berapa",
-    "gmn":   "bagaimana","gimana":"bagaimana","knp": "kenapa",
-    "kpn":   "kapan",   "apaan": "apa",     "sy":   "saya",
-    "ak":    "aku",     "yg":    "yang",    "utk":  "untuk",
-    "dg":    "dengan",  "dr":    "dari",    "dlm":  "dalam",
-    "tsb":   "tersebut","dgn":   "dengan",  "sdh":  "sudah",
-    "udh":   "sudah",   "blm":   "belum",   "tdk":  "tidak",
-    "gak":   "tidak",   "gk":    "tidak",   "ga":   "tidak",
-    "bsk":   "besok",   "skrg":  "sekarang","skrang":"sekarang",
-    "lpps":  "LPP (Laju Pertumbuhan Penduduk)",
-    "lpp":   "LPP (Laju Pertumbuhan Penduduk)",
-    "pdrd":  "PDRB (Produk Domestik Regional Bruto)",
-    "prdb":  "PDRB (Produk Domestik Regional Bruto)",
-    "ipns":  "IPM (Indeks Pembangunan Manusia)",
-    "tpkt":  "TPAK (Tingkat Partisipasi Angkatan Kerja)",
-    "tptk":  "TPT (Tingkat Pengangguran Terbuka)",
-    "info":  "informasi","jd":   "jadi",    "kl":   "kalau",
-    "kalo":  "kalau",
+    "dmn":     "dimana",  "dimna": "dimana",  "brp":  "berapa",
+    "gmn":     "bagaimana","gimana":"bagaimana","knp": "kenapa",
+    "kpn":     "kapan",   "apaan": "apa",     "sy":   "saya",
+    "ak":      "aku",     "yg":    "yang",    "utk":  "untuk",
+    "dg":      "dengan",  "dr":    "dari",    "dlm":  "dalam",
+    "tsb":     "tersebut","dgn":   "dengan",  "sdh":  "sudah",
+    "udh":     "sudah",   "blm":   "belum",   "tdk":  "tidak",
+    "gak":     "tidak",   "gk":    "tidak",   "ga":   "tidak",
+    "bsk":     "besok",   "skrg":  "sekarang","skrang":"sekarang",
+    "ipm":     "Indeks Pembangunan Manusia (IPM)",
+    "ipns":    "Indeks Pembangunan Manusia (IPM)",
+    "pdrb":    "Produk Domestik Regional Bruto (PDRB)",
+    "pdrd":    "Produk Domestik Regional Bruto (PDRB)",
+    "prdb":    "Produk Domestik Regional Bruto (PDRB)",
+    "adhb":    "Atas Dasar Harga Berlaku (ADHB)",
+    "adhk":    "Atas Dasar Harga Konstan (ADHK)",
+    "tpt":     "Tingkat Pengangguran Terbuka (TPT)",
+    "tptk":    "Tingkat Pengangguran Terbuka (TPT)",
+    "tpak":    "Tingkat Partisipasi Angkatan Kerja (TPAK)",
+    "tpkt":    "Tingkat Partisipasi Angkatan Kerja (TPAK)",
+    "apk":     "Angka Partisipasi Kasar (APK)",
+    "apm":     "Angka Partisipasi Murni (APM)",
+    "lpp":     "Laju Pertumbuhan Penduduk (LPP)",
+    "lpps":    "Laju Pertumbuhan Penduduk (LPP)",
+    "uhh":     "Usia Harapan Hidup (UHH)",
+    "rls":     "Rata-rata Lama Sekolah (RLS)",
+    "hls":     "Harapan Lama Sekolah (HLS)",
+    "se2026":  "Sensus Ekonomi 2026 (SE2026)",
+    "pst":     "Pelayanan Statistik Terpadu (PST)",
+    "lda":     "Lampung Selatan Dalam Angka (LDA)",
+    "info":    "informasi","jd":   "jadi",    "kl":   "kalau",
+    "kalo":    "kalau",
   };
   let expanded = text;
   for (const [abbrev, full] of Object.entries(abbrevMap)) {
@@ -676,10 +690,13 @@ async function handleLLMQuery(jid, question) {
 // LOGIKA UTAMA STATE MACHINE
 // ─────────────────────────────────────────────────────────────────────────────
 const GREETINGS = new Set([
-  "p", "ping", "halo", "hai", "hi", "hello",
-  "assalamu'alaikum", "assalamualaikum",
+  "p", "ping", "halo", "hallo", "hai", "hi", "hello",
+  "halo kak", "hallo kak", "halo min", "hai min",
+  "assalamu'alaikum", "assalamualaikum", "assalamualaikum wr wb",
+  "assalamu'alaikum wr wb", "assalamu'alaikum wr. wb.",
   "selamat pagi", "selamat siang", "selamat sore", "selamat malam",
-  "mulai", "start", "menu", "help", "bantuan",
+  "pagi", "siang", "sore", "malam",
+  "mulai", "start", "menu", "help", "bantuan", "tes", "test",
 ]);
 
 async function processMessage(jid, text) {
@@ -834,6 +851,23 @@ async function processMessage(jid, text) {
             MENU_UTAMA,
           ].join("\n");
         }
+
+        // Deteksi input tidak valid / acak (contoh: 'abcde123', karakter tanpa spasi yang tidak bermakna pertanyaan)
+        const isAlphanumericGibberish =
+          !cleanText.includes(" ") &&
+          /[a-zA-Z]/.test(cleanText) &&
+          /\d/.test(cleanText);
+
+        if (isAlphanumericGibberish) {
+          return [
+            "Mohon maaf, format pesan yang Anda masukkan tidak dikenali.",
+            "",
+            "Silakan pilih nomor menu yang tersedia (1 s.d. 5), atau ketik pertanyaan seputar data statistik BPS secara lengkap.",
+            "",
+            MENU_UTAMA,
+          ].join("\n");
+        }
+
         // Jika berupa kalimat/teks pertanyaan bebas -> LLM
         setSession(jid, { level: "freetext" });
         return await handleLLMQuery(jid, cleanText);
